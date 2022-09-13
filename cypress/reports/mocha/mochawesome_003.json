@@ -1,0 +1,204 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:30:11.112Z",
+    "end": "2022-07-22T17:30:18.316Z",
+    "duration": 7204,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b64034ee-bc11-4934-ac37-8fc686419c4d",
+      "title": "",
+      "fullFile": "cypress/integration/3.produtos.tp.spec.js",
+      "file": "cypress/integration/3.produtos.tp.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c57089b6-c1dd-4313-b899-2b5d927262bf",
+          "title": "Casos de teste positivos sobre a rota /produtos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTP10 - Deve buscar todos os produtos cadastrados",
+              "fullTitle": "Casos de teste positivos sobre a rota /produtos da API Serverest CTP10 - Deve buscar todos os produtos cadastrados",
+              "timedOut": null,
+              "duration": 344,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.buscarProdutos().then(res => {\n  expect(res.status).to.be.eq(200);\n  _validaServerest.default.validarBuscaDeProdutos(res);\n});",
+              "err": {},
+              "uuid": "fc696192-9027-4e01-ac84-a729e18dd39e",
+              "parentUUID": "c57089b6-c1dd-4313-b899-2b5d927262bf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "bb44fe47-bcd1-4aa3-afa0-87b119809cb9",
+              "title": "Logar com sucesso em usuário administrador",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "CTP11 - Deve cadastrar um novo produto com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTP11 - Deve cadastrar um novo produto com sucesso",
+                  "timedOut": null,
+                  "duration": 1794,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarProdutoComSucesso().then(res => {\n  expect(res.status).to.be.eq(201);\n  cy.contractValidator(res, 'post-produtos', 201).then(res => expect(res).to.be.eq('Contrato válido!'));\n  _validaServerest.default.validarCadastroDeProdutosComSucesso(res);\n  _serverest.default.salvarIdProduto(res);\n});",
+                  "err": {},
+                  "uuid": "47e7083a-5afc-4391-92d4-29acfa7eb754",
+                  "parentUUID": "bb44fe47-bcd1-4aa3-afa0-87b119809cb9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP12 - Deve buscar um produto com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTP12 - Deve buscar um produto com sucesso",
+                  "timedOut": null,
+                  "duration": 1373,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.buscarUmProdutoComSucesso().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'get-produtos-id', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body._id).to.be.eq(`${Cypress.env(\"idPro\")}`);\n});",
+                  "err": {},
+                  "uuid": "f6fe9290-dabc-4929-810a-f8451e37971a",
+                  "parentUUID": "bb44fe47-bcd1-4aa3-afa0-87b119809cb9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP13 - Deve editar um produto com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTP13 - Deve editar um produto com sucesso",
+                  "timedOut": null,
+                  "duration": 1917,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.editarProdutoComSucesso().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'put-produtos', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Registro alterado com sucesso');\n});",
+                  "err": {},
+                  "uuid": "a7d999eb-544a-4fb5-8080-9bb776880f0b",
+                  "parentUUID": "bb44fe47-bcd1-4aa3-afa0-87b119809cb9",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP14 - Deve excluir um produto com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTP14 - Deve excluir um produto com sucesso",
+                  "timedOut": null,
+                  "duration": 1453,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.excluirProdutoComSucesso().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'delete-produtos', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Registro excluído com sucesso');\n});",
+                  "err": {},
+                  "uuid": "ee01a933-df95-4f5d-b1b8-088d83c0f45d",
+                  "parentUUID": "bb44fe47-bcd1-4aa3-afa0-87b119809cb9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "47e7083a-5afc-4391-92d4-29acfa7eb754",
+                "f6fe9290-dabc-4929-810a-f8451e37971a",
+                "a7d999eb-544a-4fb5-8080-9bb776880f0b",
+                "ee01a933-df95-4f5d-b1b8-088d83c0f45d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 6537,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "fc696192-9027-4e01-ac84-a729e18dd39e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 344,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

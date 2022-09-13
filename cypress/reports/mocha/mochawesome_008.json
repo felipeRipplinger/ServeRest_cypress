@@ -1,0 +1,280 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:32:26.854Z",
+    "end": "2022-07-22T17:32:35.695Z",
+    "duration": 8841,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "bb01b8e1-5610-4fb9-b69d-f562c1607102",
+      "title": "",
+      "fullFile": "cypress/integration/8.carrinhos.tn.spec.js",
+      "file": "cypress/integration/8.carrinhos.tn.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b61338e1-0e3c-4986-a6b2-24cebf892fba",
+          "title": "Casos de teste negativos sobre a rota /carrinhos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTN14 - Não deve tentar cadastrar um carrinho caso o token esteja ausente",
+              "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest CTN14 - Não deve tentar cadastrar um carrinho caso o token esteja ausente",
+              "timedOut": null,
+              "duration": 427,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.cadastrarCarrinhoSemSucessoToken().then(res => {\n  expect(res.status).to.be.eq(401);\n  cy.contractValidator(res, 'post-carrinhos', 401).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+              "err": {},
+              "uuid": "f547d60f-1aa2-463d-9c1b-dc2045b05232",
+              "parentUUID": "b61338e1-0e3c-4986-a6b2-24cebf892fba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN15 - Não deve tentar excluir um carrinho e concluir a compra com sucesso caso o token esteja ausente",
+              "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest CTN15 - Não deve tentar excluir um carrinho e concluir a compra com sucesso caso o token esteja ausente",
+              "timedOut": null,
+              "duration": 227,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.concluirCarrinhoSemSucesso().then(res => {\n  expect(res.status).to.be.eq(401);\n  cy.contractValidator(res, 'delete-carrinhos-concluir-compra', 401).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+              "err": {},
+              "uuid": "726ed019-e659-4b6b-876a-174abc99425b",
+              "parentUUID": "b61338e1-0e3c-4986-a6b2-24cebf892fba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN16 - Não deve tentar excluir um carrinho e cancelar a compra com sucesso caso o token esteja ausente",
+              "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest CTN16 - Não deve tentar excluir um carrinho e cancelar a compra com sucesso caso o token esteja ausente",
+              "timedOut": null,
+              "duration": 240,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.cancelarCarrinhoSemSucesso().then(res => {\n  cy.contractValidator(res, 'delete-carrinhos-cancelar-compra', 401).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n});",
+              "err": {},
+              "uuid": "0276f4ea-32c8-49f8-a5fc-d62b53929bcb",
+              "parentUUID": "b61338e1-0e3c-4986-a6b2-24cebf892fba",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN17 - Não deve buscar um carrinho com um ID não existente",
+              "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest CTN17 - Não deve buscar um carrinho com um ID não existente",
+              "timedOut": null,
+              "duration": 254,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.buscarUmCarrinhoSemSucesso().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'get-carrinhos-id', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n});",
+              "err": {},
+              "uuid": "193d0123-9394-4968-ba7f-686a0dd95c06",
+              "parentUUID": "b61338e1-0e3c-4986-a6b2-24cebf892fba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "acd06649-2d82-456a-b97c-7eaaa9d8374e",
+              "title": "Logar com sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve excluir o carrinho do usuário logado, se existir",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar com sucesso Deve excluir o carrinho do usuário logado, se existir",
+                  "timedOut": null,
+                  "duration": 1471,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.cancelarCarrinho().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'delete-carrinhos-cancelar-compra', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n});",
+                  "err": {},
+                  "uuid": "b997905f-5b0a-4e50-8aaa-951569e16277",
+                  "parentUUID": "acd06649-2d82-456a-b97c-7eaaa9d8374e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN18 - Não deve cadastrar um carrinho com produtos duplicados",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar com sucesso CTN18 - Não deve cadastrar um carrinho com produtos duplicados",
+                  "timedOut": null,
+                  "duration": 1433,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.cadastrarCarrinhoSemSucesso().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'post-carrinhos', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Não é permitido possuir produto duplicado');\n});",
+                  "err": {},
+                  "uuid": "bb869c07-37c8-47d2-8107-1fd227aed37e",
+                  "parentUUID": "acd06649-2d82-456a-b97c-7eaaa9d8374e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN19 - Não deve cadastrar um carrinho com produtos não cadastrados",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar com sucesso CTN19 - Não deve cadastrar um carrinho com produtos não cadastrados",
+                  "timedOut": null,
+                  "duration": 1460,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.cadastrarCarrinhoSemSucessoInex().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'post-carrinhos', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Produto não encontrado');\n});",
+                  "err": {},
+                  "uuid": "85c62730-084e-406e-8d13-f4def2df9155",
+                  "parentUUID": "acd06649-2d82-456a-b97c-7eaaa9d8374e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN20 - Não deve cadastrar um carrinho com um produto sem quantidade o suficiente",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar com sucesso CTN20 - Não deve cadastrar um carrinho com um produto sem quantidade o suficiente",
+                  "timedOut": null,
+                  "duration": 1551,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.cadastrarCarrinhoSemSucessoQuantidade().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'post-carrinhos', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Produto não possui quantidade suficiente');\n});",
+                  "err": {},
+                  "uuid": "b290674d-5202-4a0c-8cf1-e776a153efb5",
+                  "parentUUID": "acd06649-2d82-456a-b97c-7eaaa9d8374e",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN21 - Não deve cadastrar um carrinho para um usuário que já tenha um carrinho",
+                  "fullTitle": "Casos de teste negativos sobre a rota /carrinhos da API Serverest Logar com sucesso CTN21 - Não deve cadastrar um carrinho para um usuário que já tenha um carrinho",
+                  "timedOut": null,
+                  "duration": 1557,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.cadastrarCarrinhoComSucesso();\n_serverestNegative.default.cadastrarCarrinhoSemSucessoDuplicado().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'post-carrinhos', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Não é permitido ter mais de 1 carrinho');\n});",
+                  "err": {},
+                  "uuid": "7cf92a48-1f7d-468d-a17a-966f766ad58f",
+                  "parentUUID": "acd06649-2d82-456a-b97c-7eaaa9d8374e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b997905f-5b0a-4e50-8aaa-951569e16277",
+                "bb869c07-37c8-47d2-8107-1fd227aed37e",
+                "85c62730-084e-406e-8d13-f4def2df9155",
+                "b290674d-5202-4a0c-8cf1-e776a153efb5",
+                "7cf92a48-1f7d-468d-a17a-966f766ad58f"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 7472,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "f547d60f-1aa2-463d-9c1b-dc2045b05232",
+            "726ed019-e659-4b6b-876a-174abc99425b",
+            "0276f4ea-32c8-49f8-a5fc-d62b53929bcb",
+            "193d0123-9394-4968-ba7f-686a0dd95c06"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1148,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

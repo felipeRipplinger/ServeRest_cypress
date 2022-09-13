@@ -1,0 +1,145 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:31:32.253Z",
+    "end": "2022-07-22T17:31:33.631Z",
+    "duration": 1378,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "23a102f8-5cc1-42bc-ab4c-591c9832e038",
+      "title": "",
+      "fullFile": "cypress/integration/6.usuarios.tn.spec.js",
+      "file": "cypress/integration/6.usuarios.tn.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b48a8f65-3a12-4f01-b110-7909770855f6",
+          "title": "Casos de teste negativos sobre a rota /usuarios da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTN02 - Não deve cadastrar um novo usuário caso o email já esteja cadastrado",
+              "fullTitle": "Casos de teste negativos sobre a rota /usuarios da API Serverest CTN02 - Não deve cadastrar um novo usuário caso o email já esteja cadastrado",
+              "timedOut": null,
+              "duration": 649,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.buscarUsuarioParaCadastroNegativo();\ncy.get('@usuarioCadastro').then(res => {\n  cy.log(res);\n  _serverestNegative.default.cadastrarUsuarioSemSucesso(res).then(res => {\n    expect(res.status).to.be.eq(400);\n    cy.contractValidator(res, 'post-usuarios', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Este email já está sendo usado');\n  });\n});",
+              "err": {},
+              "uuid": "9fd8c06c-d121-4eea-be29-d5a357114eec",
+              "parentUUID": "b48a8f65-3a12-4f01-b110-7909770855f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN03 - Não deve buscar um usuário com um ID não existente ",
+              "fullTitle": "Casos de teste negativos sobre a rota /usuarios da API Serverest CTN03 - Não deve buscar um usuário com um ID não existente ",
+              "timedOut": null,
+              "duration": 235,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.buscarUmUsuarioSemSucesso().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'get-usuarios-id', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Usuário não encontrado');\n});",
+              "err": {},
+              "uuid": "0ac0af48-02e4-4970-b8f1-3a4198294934",
+              "parentUUID": "b48a8f65-3a12-4f01-b110-7909770855f6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN04 - Não deve excluir um usuário com carrinho cadastrado",
+              "fullTitle": "Casos de teste negativos sobre a rota /usuarios da API Serverest CTN04 - Não deve excluir um usuário com carrinho cadastrado",
+              "timedOut": null,
+              "duration": 441,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.buscarUsuarioComCarrinho();\ncy.get('@idUsuario').then(res => {\n  _serverestNegative.default.excluirUsuarioSemSucesso(res).then(res => {\n    expect(res.status).to.be.eq(400);\n    cy.contractValidator(res, 'delete-usuarios', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Não é permitido excluir usuário com carrinho cadastrado');\n  });\n});",
+              "err": {},
+              "uuid": "0ddbed96-6622-49cb-90d2-aa9248870bdf",
+              "parentUUID": "b48a8f65-3a12-4f01-b110-7909770855f6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9fd8c06c-d121-4eea-be29-d5a357114eec",
+            "0ac0af48-02e4-4970-b8f1-3a4198294934",
+            "0ddbed96-6622-49cb-90d2-aa9248870bdf"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1325,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

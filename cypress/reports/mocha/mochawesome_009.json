@@ -1,0 +1,185 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:32:58.085Z",
+    "end": "2022-07-22T17:33:02.812Z",
+    "duration": 4727,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "92267242-d8e3-45b1-bef0-67ea49a997b9",
+      "title": "",
+      "fullFile": "cypress/integration/9.fluxoDeCompra.tf.spec.js",
+      "file": "cypress/integration/9.fluxoDeCompra.tf.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "bcd5be76-b63f-43ff-a861-9956a19a0e61",
+          "title": "CFT01 - Fluxo de compra da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Usuário se cadastra com sucesso",
+              "fullTitle": "CFT01 - Fluxo de compra da API Serverest Usuário se cadastra com sucesso",
+              "timedOut": null,
+              "duration": 576,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.cadastrarUsuarioComSucesso().then(res => {\n  expect(res.status).to.be.eq(201);\n  cy.contractValidator(res, 'post-usuarios', 201).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Cadastro realizado com sucesso');\n  _serverest.default.salvarIdUsuario(res);\n});",
+              "err": {},
+              "uuid": "d1b2fc47-e227-411a-a1bd-ec0eb807626b",
+              "parentUUID": "bcd5be76-b63f-43ff-a861-9956a19a0e61",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "96911877-3a0b-4a67-8ce4-01252ad96d39",
+              "title": "Usuário loga com sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Usuário olha os produtos disponíveis",
+                  "fullTitle": "CFT01 - Fluxo de compra da API Serverest Usuário loga com sucesso Usuário olha os produtos disponíveis",
+                  "timedOut": null,
+                  "duration": 1412,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.buscarProdutos().then(res => {\n  expect(res.status).to.be.eq(200);\n  _validaServerest.default.validarBuscaDeProdutos(res);\n});",
+                  "err": {},
+                  "uuid": "1c8e45a1-16d3-4936-bab3-8c3ac1f703af",
+                  "parentUUID": "96911877-3a0b-4a67-8ce4-01252ad96d39",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Usuário adiciona o produto que desejar no carrinho",
+                  "fullTitle": "CFT01 - Fluxo de compra da API Serverest Usuário loga com sucesso Usuário adiciona o produto que desejar no carrinho",
+                  "timedOut": null,
+                  "duration": 1344,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarCarrinhoComSucesso().then(res => {\n  expect(res.status).to.be.eq(201);\n  cy.contractValidator(res, 'post-carrinhos', 201).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Cadastro realizado com sucesso');\n});",
+                  "err": {},
+                  "uuid": "3c8cf3d5-96f3-4914-8329-6f8e3fbfb7b9",
+                  "parentUUID": "96911877-3a0b-4a67-8ce4-01252ad96d39",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Usuário conclui a compra com sucesso",
+                  "fullTitle": "CFT01 - Fluxo de compra da API Serverest Usuário loga com sucesso Usuário conclui a compra com sucesso",
+                  "timedOut": null,
+                  "duration": 1265,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.concluirCarrinho().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'delete-carrinhos-concluir-compra', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Registro excluído com sucesso');\n});",
+                  "err": {},
+                  "uuid": "21790a6d-8088-4a1c-9a0a-fb05eab51e4b",
+                  "parentUUID": "96911877-3a0b-4a67-8ce4-01252ad96d39",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "1c8e45a1-16d3-4936-bab3-8c3ac1f703af",
+                "3c8cf3d5-96f3-4914-8329-6f8e3fbfb7b9",
+                "21790a6d-8088-4a1c-9a0a-fb05eab51e4b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 4021,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "d1b2fc47-e227-411a-a1bd-ec0eb807626b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 576,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

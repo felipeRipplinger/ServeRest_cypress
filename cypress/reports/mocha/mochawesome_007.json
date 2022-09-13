@@ -1,0 +1,300 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 9,
+    "passes": 9,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:31:54.939Z",
+    "end": "2022-07-22T17:32:03.387Z",
+    "duration": 8448,
+    "testsRegistered": 9,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f5feaeac-dba1-43b3-a366-7fcac51488dd",
+      "title": "",
+      "fullFile": "cypress/integration/7.produtos.tn.spec.js",
+      "file": "cypress/integration/7.produtos.tn.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8ab17463-600b-478f-b5b5-d0aca8571fa5",
+          "title": "Casos de teste negativos sobre a rota /produtos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTN05 - Não deve tentar cadastrar um produto caso o token esteja ausente",
+              "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest CTN05 - Não deve tentar cadastrar um produto caso o token esteja ausente",
+              "timedOut": null,
+              "duration": 460,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.cadastrarProdutoSemSucessoToken().then(res => {\n  expect(res.status).to.be.eq(401);\n  cy.contractValidator(res, 'post-produtos', 401).then(res => expect(res).to.be.eq('Contrato válido!'));\n  _validaServerest.default.validarCadastroDeProdutosSemSucessoToken(res);\n});",
+              "err": {},
+              "uuid": "036e6a19-3029-42f1-98c7-353ba4d2eb55",
+              "parentUUID": "8ab17463-600b-478f-b5b5-d0aca8571fa5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN06 - Não deve tentar excluir um produto caso o token esteja ausente",
+              "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest CTN06 - Não deve tentar excluir um produto caso o token esteja ausente",
+              "timedOut": null,
+              "duration": 468,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.buscarProdutoParaAlterar();\ncy.get('@idProdutoAlt').then(res => {\n  _serverestNegative.default.excluirProdutoSemSucessoToken(res).then(res => {\n    expect(res.status).to.be.eq(401);\n    cy.contractValidator(res, 'delete-produtos', 401).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n  });\n});",
+              "err": {},
+              "uuid": "7f383d8b-b9f2-46ee-985a-85becd944e09",
+              "parentUUID": "8ab17463-600b-478f-b5b5-d0aca8571fa5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "CTN07 - Não deve tentar editar um produto caso o token esteja ausente",
+              "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest CTN07 - Não deve tentar editar um produto caso o token esteja ausente",
+              "timedOut": null,
+              "duration": 464,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverestNegative.default.buscarProdutoParaAlterar();\ncy.get('@idProdutoAlt').then(res => {\n  _serverestNegative.default.editarProdutoSemSucessoToken(res).then(res => {\n    expect(res.status).to.be.eq(401);\n    cy.contractValidator(res, 'put-produtos', 401).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Token de acesso ausente, inválido, expirado ou usuário do token não existe mais');\n  });\n});",
+              "err": {},
+              "uuid": "28b9713a-088b-4bb6-8b7e-0fb200902e2b",
+              "parentUUID": "8ab17463-600b-478f-b5b5-d0aca8571fa5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "cafb96d0-67f8-473c-8972-63e3e13da4c5",
+              "title": "Logar com sucesso em usuário administrador",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "CTN08 - Não deve cadastrar um produto caso o nome já esteja cadastrado",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTN08 - Não deve cadastrar um produto caso o nome já esteja cadastrado",
+                  "timedOut": null,
+                  "duration": 1222,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.buscarProdutoParaCadastroNegativo();\ncy.get('@produtoCadastro').then(res => {\n  _serverestNegative.default.cadastrarProdutoSemSucesso(res).then(res => {\n    expect(res.status).to.be.eq(400);\n    cy.contractValidator(res, 'post-produtos', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n    _validaServerest.default.validarCadastroDeProdutosSemSucesso(res);\n  });\n});",
+                  "err": {},
+                  "uuid": "f9fdb789-625f-4b59-8111-063a96584035",
+                  "parentUUID": "cafb96d0-67f8-473c-8972-63e3e13da4c5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN09 - Não deve buscar um produto com um ID não existente",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTN09 - Não deve buscar um produto com um ID não existente",
+                  "timedOut": null,
+                  "duration": 1138,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.buscarUmProdutoSemSucesso().then(res => {\n  expect(res.status).to.be.eq(400);\n  cy.contractValidator(res, 'get-produtos-id', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Produto não encontrado');\n});",
+                  "err": {},
+                  "uuid": "dae1147e-c753-4943-ac11-5ceb05c51a3e",
+                  "parentUUID": "cafb96d0-67f8-473c-8972-63e3e13da4c5",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN10 - Não deve excluir um produto que esteja em um carrinho",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Logar com sucesso em usuário administrador CTN10 - Não deve excluir um produto que esteja em um carrinho",
+                  "timedOut": null,
+                  "duration": 1125,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.buscarProdutoEmCarrinho();\ncy.get('@idProduto').then(res => {\n  _serverestNegative.default.excluirProdutoSemSucesso(res).then(res => {\n    expect(res.status).to.be.eq(400);\n    cy.contractValidator(res, 'delete-produtos', 400).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Não é permitido excluir produto que faz parte de carrinho');\n  });\n});",
+                  "err": {},
+                  "uuid": "9ca83ab1-cc6f-4abf-9620-998e359e046d",
+                  "parentUUID": "cafb96d0-67f8-473c-8972-63e3e13da4c5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "f9fdb789-625f-4b59-8111-063a96584035",
+                "dae1147e-c753-4943-ac11-5ceb05c51a3e",
+                "9ca83ab1-cc6f-4abf-9620-998e359e046d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3485,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "91059744-6e89-4988-85e3-b11e65f9fa7a",
+              "title": "Logar com sucesso em usuário não administrador",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "CTN11 - Não deve cadastrar um produto caso o usuário não seja administrador",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Logar com sucesso em usuário não administrador CTN11 - Não deve cadastrar um produto caso o usuário não seja administrador",
+                  "timedOut": null,
+                  "duration": 953,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.cadastrarProdutoSemSucessoAdm().then(res => {\n  expect(res.status).to.be.eq(403);\n  cy.contractValidator(res, 'post-produtos', 403).then(res => expect(res).to.be.eq('Contrato válido!'));\n  _validaServerest.default.validarCadastroDeProdutosSemSucessoAdm(res);\n});",
+                  "err": {},
+                  "uuid": "e8811f42-cae1-45c9-a094-471b1a442526",
+                  "parentUUID": "91059744-6e89-4988-85e3-b11e65f9fa7a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN12 - Não deve excluir um produto caso o usuário não seja administrador",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Logar com sucesso em usuário não administrador CTN12 - Não deve excluir um produto caso o usuário não seja administrador",
+                  "timedOut": null,
+                  "duration": 1238,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.buscarProdutoParaAlterar();\ncy.get('@idProdutoAlt').then(res => {\n  _serverestNegative.default.excluirProdutoSemSucessoAdm(res).then(res => {\n    expect(res.status).to.be.eq(403);\n    cy.contractValidator(res, 'delete-produtos', 403).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Rota exclusiva para administradores');\n  });\n});",
+                  "err": {},
+                  "uuid": "0d9c5fc3-2d8f-41da-974c-a070c2884243",
+                  "parentUUID": "91059744-6e89-4988-85e3-b11e65f9fa7a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTN13 - Não deve editar um produto caso o usuário não seja administrador",
+                  "fullTitle": "Casos de teste negativos sobre a rota /produtos da API Serverest Logar com sucesso em usuário não administrador CTN13 - Não deve editar um produto caso o usuário não seja administrador",
+                  "timedOut": null,
+                  "duration": 1190,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverestNegative.default.buscarProdutoParaAlterar();\ncy.get('@idProdutoAlt').then(res => {\n  _serverestNegative.default.editarProdutoSemSucessoAdm(res).then(res => {\n    expect(res.status).to.be.eq(403);\n    cy.contractValidator(res, 'put-produtos', 403).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.body.message).to.be.eq('Rota exclusiva para administradores');\n  });\n});",
+                  "err": {},
+                  "uuid": "759548e7-7dd6-4faa-b671-4ed0a9f3704b",
+                  "parentUUID": "91059744-6e89-4988-85e3-b11e65f9fa7a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "e8811f42-cae1-45c9-a094-471b1a442526",
+                "0d9c5fc3-2d8f-41da-974c-a070c2884243",
+                "759548e7-7dd6-4faa-b671-4ed0a9f3704b"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 3381,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "036e6a19-3029-42f1-98c7-353ba4d2eb55",
+            "7f383d8b-b9f2-46ee-985a-85becd944e09",
+            "28b9713a-088b-4bb6-8b7e-0fb200902e2b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1392,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

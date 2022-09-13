@@ -1,0 +1,242 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:30:46.472Z",
+    "end": "2022-07-22T17:30:55.681Z",
+    "duration": 9209,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2593d9b2-ab22-4ff6-8bb1-985894315602",
+      "title": "",
+      "fullFile": "cypress/integration/4.carrinhos.tp.spec.js",
+      "file": "cypress/integration/4.carrinhos.tp.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "04bc79de-e9dc-4b92-8211-1f2a4c17d05a",
+          "title": "Casos de teste positivos sobre a rota /carrinhos da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTP15 - Deve buscar todos os carrinhos cadastrados",
+              "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest CTP15 - Deve buscar todos os carrinhos cadastrados",
+              "timedOut": null,
+              "duration": 948,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.buscarCarrinhos().then(res => {\n  cy.contractValidator(res, 'get-carrinhos', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n});",
+              "err": {},
+              "uuid": "eb746682-af2d-4f7b-9f6f-39a5fc6296cb",
+              "parentUUID": "04bc79de-e9dc-4b92-8211-1f2a4c17d05a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [
+            {
+              "uuid": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+              "title": "Logar com sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve excluir o carrinho do usuário logado, se existir",
+                  "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest Logar com sucesso Deve excluir o carrinho do usuário logado, se existir",
+                  "timedOut": null,
+                  "duration": 1462,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cancelarCarrinho().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'delete-carrinhos-cancelar-compra', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n});",
+                  "err": {},
+                  "uuid": "d7987506-3f10-4a62-ae5a-7a5e6fa9874d",
+                  "parentUUID": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP16 - Deve cadastrar um carrinho com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest Logar com sucesso CTP16 - Deve cadastrar um carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 1444,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarCarrinhoComSucesso().then(res => {\n  _serverest.default.salvarIdCarrinho(res);\n  expect(res.status).to.be.eq(201);\n  cy.contractValidator(res, 'post-carrinhos', 201).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Cadastro realizado com sucesso');\n});",
+                  "err": {},
+                  "uuid": "5e114b9c-f8a4-4e5d-a692-f0be7f738d9d",
+                  "parentUUID": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP17 - Deve buscar um carrinho com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest Logar com sucesso CTP17 - Deve buscar um carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 1522,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.buscarUmCarrinhoComSucesso().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'get-carrinhos-id', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body._id).to.be.eq(`${Cypress.env(\"idCarrinho\")}`);\n});",
+                  "err": {},
+                  "uuid": "3c4bf1aa-abc8-48d3-8076-08acb80f40a3",
+                  "parentUUID": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP18 - Deve excluir outro carrinho e cancelar a compra com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest Logar com sucesso CTP18 - Deve excluir outro carrinho e cancelar a compra com sucesso",
+                  "timedOut": null,
+                  "duration": 1232,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cancelarCarrinho().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'delete-carrinhos-cancelar-compra', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Registro excluído com sucesso. Estoque dos produtos reabastecido');\n});",
+                  "err": {},
+                  "uuid": "d5166f49-57c5-4fde-b8ec-1584ffbf8aec",
+                  "parentUUID": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve cadastrar outro carrinho com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest Logar com sucesso Deve cadastrar outro carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 1154,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.cadastrarCarrinhoComSucesso().then(res => {\n  expect(res.status).to.be.eq(201);\n  cy.contractValidator(res, 'post-carrinhos', 201).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Cadastro realizado com sucesso');\n});",
+                  "err": {},
+                  "uuid": "2ca66217-e90e-40e7-baa1-d29953a5c7d7",
+                  "parentUUID": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "CTP19 - Deve excluir um carrinho e concluir a compra com sucesso",
+                  "fullTitle": "Casos de teste positivos sobre a rota /carrinhos da API Serverest Logar com sucesso CTP19 - Deve excluir um carrinho e concluir a compra com sucesso",
+                  "timedOut": null,
+                  "duration": 1238,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.concluirCarrinho().then(res => {\n  expect(res.status).to.be.eq(200);\n  cy.contractValidator(res, 'delete-carrinhos-concluir-compra', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n  expect(res.body.message).to.be.eq('Registro excluído com sucesso');\n});",
+                  "err": {},
+                  "uuid": "4e096408-f2e2-4731-8cd6-59b596b1e0e0",
+                  "parentUUID": "c37dedd0-99eb-42ae-82d1-457918fcc20d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d7987506-3f10-4a62-ae5a-7a5e6fa9874d",
+                "5e114b9c-f8a4-4e5d-a692-f0be7f738d9d",
+                "3c4bf1aa-abc8-48d3-8076-08acb80f40a3",
+                "d5166f49-57c5-4fde-b8ec-1584ffbf8aec",
+                "2ca66217-e90e-40e7-baa1-d29953a5c7d7",
+                "4e096408-f2e2-4731-8cd6-59b596b1e0e0"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 8052,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [
+            "eb746682-af2d-4f7b-9f6f-39a5fc6296cb"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 948,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

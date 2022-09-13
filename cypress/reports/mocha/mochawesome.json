@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-07-22T17:29:03.709Z",
+    "end": "2022-07-22T17:29:06.200Z",
+    "duration": 2491,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "34a922fe-e3c5-469d-8503-e31c89d2d44b",
+      "title": "",
+      "fullFile": "cypress/integration/1.login.tp.spec.js",
+      "file": "cypress/integration/1.login.tp.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1fffea2e-5172-4f07-a143-9eaadd93e625",
+          "title": "Casos de teste positivos sobre a rota /login da API Serverest",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CTP01 - Deve realizar um login com sucesso",
+              "fullTitle": "Casos de teste positivos sobre a rota /login da API Serverest CTP01 - Deve realizar um login com sucesso",
+              "timedOut": null,
+              "duration": 2028,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_serverest.default.verificarSeExisteUsuario();\n_serverest.default.buscarUsuarioParaLogin();\ncy.get('@usuarioLogin').then(usuario => {\n  _serverest.default.logar(usuario).then(res => {\n    cy.contractValidator(res, 'post-login', 200).then(res => expect(res).to.be.eq('Contrato válido!'));\n    expect(res.status).to.be.eq(200);\n    _validaServerest.default.validarLoginComSucesso(res);\n    _serverest.default.salvarBearer(res);\n  });\n});",
+              "err": {},
+              "uuid": "32c87e85-aa6a-461a-b4b3-846b7e9fc533",
+              "parentUUID": "1fffea2e-5172-4f07-a143-9eaadd93e625",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "32c87e85-aa6a-461a-b4b3-846b7e9fc533"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2028,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

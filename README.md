@@ -1,6 +1,6 @@
 ![banner](./bannerF.png)
 
-Challenge da Sprint 6.
+Challenge
 ## Índice
 
 - [Introdução](#-introdução)
@@ -10,7 +10,7 @@ Challenge da Sprint 6.
 
 ## 👋 Introdução
 
-Seja bem vindo ao meu repositório da Sprint 6! Antes de prosseguir neste arquivo recomendo ler a documentação dentro da pasta [documentos](#-principais-pastasarquivos), começando pelo plano de testes, assim você terá uma experiencia completa deste projeto. Neste README vou demonstrar como você pode rodar os testes e gerar um report automatizado. 
+Seja bem vindo, este repositório é a versão final do desafio desenvolvido durante um programa de bolsas. Antes de prosseguir neste arquivo recomendo ler a documentação dentro da pasta [documentos](#-principais-pastasarquivos), começando pelo plano de testes, assim você terá uma experiencia completa deste projeto. Neste README vou demonstrar como você pode rodar os testes e gerar um report automatizado. 
 
 ## 📂 Principais Pastas/Arquivos 
 
